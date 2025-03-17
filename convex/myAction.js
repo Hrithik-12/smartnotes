@@ -39,7 +39,7 @@ export const search = action({
     try {
       // Create embeddings instance
       const embeddings = new GoogleGenerativeAIEmbeddings({
-        apiKey: 'AIzaSyA2baTvndDumtuchris-95NKww0QZcoZIM',
+        apiKey:  process.env.NEXT_PUBLIC_GEMINI_API_KEY,
         model: "text-embedding-004",
         taskType: TaskType.RETRIEVAL_DOCUMENT,
       });
