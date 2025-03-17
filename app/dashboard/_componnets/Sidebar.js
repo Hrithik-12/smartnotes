@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Layout, Shield } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
 import Uploadpdf from "./uploadpdf";
 import { api } from '@/convex/_generated/api';
 import { useUser } from '@clerk/nextjs'
