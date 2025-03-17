@@ -15,7 +15,7 @@ export const ingest = action({
         args.splitText,
         args.fileId,
         new GoogleGenerativeAIEmbeddings({
-          apiKey: 'AIzaSyA2baTvndDumtuchris-95NKww0QZcoZIM',
+          apiKey: process.env.GOOGLE_API_KEY, // Changed to use environment variable
           model: "text-embedding-004",
           taskType: TaskType.RETRIEVAL_DOCUMENT,
           title: "Document title",
@@ -37,9 +37,8 @@ export const search = action({
   },
   handler: async (ctx, args) => {
     try {
-      // Create embeddings instance
       const embeddings = new GoogleGenerativeAIEmbeddings({
-        apiKey:  process.env.NEXT_PUBLIC_GEMINI_API_KEY,
+        apiKey:process.env.GOOGLE_API_KEY , // Changed to use correct environment variable
         model: "text-embedding-004",
         taskType: TaskType.RETRIEVAL_DOCUMENT,
       });
